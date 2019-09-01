@@ -24,7 +24,6 @@ vector<int> BFS(int startNode)
         result.push_back(front);
         for(auto node : graph[front])
         {
-            // Node contain address. *node for value
             if(!visited[node])
             {
                 q.push(node);
