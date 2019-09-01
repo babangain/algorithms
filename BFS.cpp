@@ -22,13 +22,13 @@ vector<int> BFS(int startNode)
         int front = q.front();
         q.pop();
         result.push_back(front);
-        for(auto node = graph[front].begin(); node != graph[front].end(); node++)
+        for(auto node : graph[front])
         {
             // Node contain address. *node for value
-            if(!visited[*node])
+            if(!visited[node])
             {
-                q.push(*node);
-                visited[*node] = true;
+                q.push(node);
+                visited[node] = true;
             }
         }
     }
@@ -60,9 +60,9 @@ int32_t main()
             cout<<result[i];
         }
          */
-        
+
         /*For disconnected graph */
-        
+
         for(int i=0; i< nodes; i++)
         {
             if(visited[i] == false)
