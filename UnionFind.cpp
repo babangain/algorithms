@@ -9,13 +9,10 @@ using namespace std;
 //finding root of an element.
 int root(int Arr[ ],int i)
 {
-    while(Arr[ i ] != i)           //chase parent of current element until it reaches root.
-    {
-        i = Arr[ i ];
-    }
-    return i;
+    if(i== Arr[i])
+        return  i;
+    return Arr[i] = root(Arr,Arr[i]);
 }
-
 /*modified union function where we connect the elements by changing the root of one of the element */
 
 int Union(int Arr[ ] ,int A ,int B)
